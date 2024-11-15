@@ -2,6 +2,10 @@ package Utilities;
 
 import com.github.javafaker.Faker;
 
+/*
+    This file is used to supply data for new user creation everytime.
+ */
+
 public class FakeNameGenerator {
 
     private final Faker faker = new Faker();

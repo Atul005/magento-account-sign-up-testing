@@ -28,7 +28,7 @@ public class BrowserFactory {
         }
         webDriver.manage().window().maximize();
 //        webDriver.get(url);
-        webDriver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
+        webDriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         return webDriver;
     }
 

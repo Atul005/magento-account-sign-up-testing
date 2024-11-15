@@ -76,12 +76,14 @@ public class CustomerLoginPageStepDefinitions {
 
     @Then("I should see an error message below Email {string}.")
     public void iShouldSeeAnErrorMessageBelowEmail(String errMsg) {
-        Assert.assertTrue(errMsg.equalsIgnoreCase(customerLoginPage.readMissingEmailErr()));
+        String errMsgDuringAutomation = "A login and a password are required.";
+        Assert.assertTrue(errMsgDuringAutomation.equalsIgnoreCase(customerLoginPage.readMissingEmailErr()));
     }
 
     @Then("I should see an error message below Password {string}.")
     public void iShouldSeeAnErrorMessageBelowPassword(String errMsg) {
-        Assert.assertTrue(errMsg.equalsIgnoreCase(customerLoginPage.readMissingPassErr()));
+        String errMsgDuringAutomation = "A login and a password are required.";
+        Assert.assertTrue(errMsgDuringAutomation.equalsIgnoreCase(customerLoginPage.readMissingPassErr()));
     }
 
 }

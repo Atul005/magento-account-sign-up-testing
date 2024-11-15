@@ -42,7 +42,7 @@ public class MyAccountPageStepDefinition {
     @Then("I should be redirected to My Account Page")
     public void iShouldBeRedirectedToMyAccountPage() {
         Assert.assertTrue(MY_ACCOUNT_URL.equalsIgnoreCase(context.getWebDriver().getCurrentUrl()));
-       // Assert.assertEquals(MY_ACCOUNT_PAGE_TITLE, context.getWebDriver().getTitle());
+        // Assert.assertEquals(MY_ACCOUNT_PAGE_TITLE, context.getWebDriver().getTitle());
     }
 
     @When("I click on User Action Button menu")
@@ -57,8 +57,14 @@ public class MyAccountPageStepDefinition {
 
     @Then("I should be able to sign out of My Account")
     public void iShouldBeAbleToSignOutOfMyAccount() {
-            Assert.assertTrue(context.getWebDriver().getCurrentUrl().equalsIgnoreCase(LOG_OUT_PAGE_URL));
-            //Assert.assertTrue(context.getWebDriver().getCurrentUrl().equalsIgnoreCase("https://magento.softwaretestingboard.com/"));
+        try {
+            Thread.sleep(10000); // to allow platform to redirect to home page from log out success page
+            //Assert.assertTrue(context.getWebDriver().getCurrentUrl().equalsIgnoreCase(LOG_OUT_PAGE_URL));
+            Assert.assertTrue(context.getWebDriver().getCurrentUrl().equalsIgnoreCase("https://magento.softwaretestingboard.com/"));
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+
     }
 
 }

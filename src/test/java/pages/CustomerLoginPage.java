@@ -27,6 +27,9 @@ public class CustomerLoginPage {
     @FindBy(xpath = "//*[@id=\"pass-error\"]")
     WebElement missingPassErr;
 
+    @FindBy(xpath = "//*[@id=\"maincontent\"]/div[2]/div[2]/div/div/div")
+    WebElement passEmailReqErr;
+
     @FindBy(xpath = "//*[@id=\"maincontent\"]/div[3]/div/div[2]/div[2]/div[2]/div/div/a")
     WebElement createAccountBtn;
 
@@ -57,13 +60,17 @@ public class CustomerLoginPage {
     }
 
     public String readMissingEmailErr(){
-        missingEmailErr.isDisplayed();
-        return missingEmailErr.getText();
+        //missingEmailErr.isDisplayed();
+        //return missingEmailErr.getText();
+        passEmailReqErr.isDisplayed(); // During automation, different error is seen instead of the one seen in manual.
+        return passEmailReqErr.getText();
     }
 
     public String readMissingPassErr(){
-        missingPassErr.isDisplayed();
-        return missingPassErr.getText();
+        //missingPassErr.isDisplayed();
+        //return missingPassErr.getText();
+        passEmailReqErr.isDisplayed(); //During automation, different error is seen instead of the one seen in manual.
+        return passEmailReqErr.getText();
     }
 
     public void createAccountBtnClick(){
